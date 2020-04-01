@@ -1,0 +1,79 @@
+.api-data {
+    position: relative;
+    left: 25%;
+    height: 50%;
+    width: 50%;
+    padding:0;
+    text-align: center;
+    align-content: center;
+    background-color: none;
+    font-family: 'Sen' ,sans-serif;
+    color: #212121;
+}
+
+.global-data {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    max-width: 100%;
+    background-image: linear-gradient(to top left, #3354B5, #444444);
+    color: whitesmoke;
+    border-top: 2px #acbbe6 solid;
+    border-left: 2px #acbbe6 solid;
+    border-bottom: 2px #eedebd solid;
+    border-right: 2px #eedebd solid;
+    color: whitesmoke;
+    border-radius: 10px;
+}
+
+.global-data h3 {
+    color: #eedebd;;
+    text-shadow: 1px 1px #212121;
+    padding-bottom: 1%;
+    border-bottom: 2px solid #eedebd;
+}
+
+.country-specific-data {
+    margin-top: 5%;
+    max-width: 100%;
+    background-image: linear-gradient(to top left, #3354B5, #444444);
+    color: #212121;
+    border: 2px #212121 solid;
+    border-top: 2px #acbbe6 solid;
+    border-left: 2px #acbbe6 solid;
+    border-bottom: 2px #eedebd solid;
+    border-right: 2px #eedebd solid;
+    border-radius: 10px;
+}
+
+.country-specific-data h3 {
+    color: #e80000;
+    text-shadow: 1px 1px #212121;
+    padding-bottom: 1%;
+    border-bottom: 2px solid #212121;
+
+}
+
+#select {
+    max-width: 100%;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    border-top: 1px #212121 solid;
+    border-left: 1px #212121 solid;
+    border-bottom: 1px #444444 solid;
+    border-right: 1px #444444 solid;
+    color: #e80000;
+}
+
+@media (max-width: 450px) {
+    .api-data h3, h4 {
+        padding-left: 5pt;
+        padding-right: 5pt;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .api-data {
+        font-size: small;
+    }
+} 
