@@ -6,8 +6,7 @@ let dataArray = [];            //holds parsed data for each country
 let globalTotals = [0, 0, 0]; // holds the global number of cases, deaths, and recovered
 let allThisData = [];
 let chartMap = new Map();
-
-let refreshPage = setInterval(getData, 1000000); // refreshes api call every 1M seconds
+let myChart;
 
 getData();
 
@@ -89,6 +88,8 @@ function numFormat(num) {
     return s.split("").reverse().join("") || "0";
 }
 
+
+
 function getDailyByCountry(country) {
     document.getElementById('graph').style.display = "none";
     document.getElementById('loading').style.display = "block";
@@ -102,7 +103,6 @@ function getDailyByCountry(country) {
         if(o.Status == "confirmed") {
             date = new Date(o.Date).getTime();
             chartMap.set(date, (chartMap.get(date) || 0) + o.Cases); 
-            console.log(chartMap.get(date) + " cases of COVID in " + country.country);
         }
     }
     makeChart(chartMap);
@@ -111,10 +111,12 @@ function getDailyByCountry(country) {
 }
 
 
+
 function makeChart(map) {
     document.getElementById('graph').style.display = "block";
     document.getElementById('loading').style.display = "none";
     const ctx = document.getElementById('graph').getContext('2d');
+    ctx.clearRect(0, 0, document.getElementById('graph').width, document.getElementById('graph').height);
     let xlabels = [];
     xlabels = Array.from(map.keys());
     for(let i = 0; i < xlabels.length; i++) {
@@ -123,7 +125,10 @@ function makeChart(map) {
     let ylabels = [];
     ylabels = Array.from(map.values());
     
-    const myChart = new Chart(ctx, {
+    if(myChart) {
+        myChart.destroy();
+    }
+    myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: xlabels,
