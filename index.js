@@ -72,6 +72,10 @@ function populateGlobal() {
     getDataForCountry(document.getElementById('select').selectedIndex); // calls next function after this one is finished
 }
 
+
+//****************************************************************************************
+// Formats numbers for display in the Global Data and Country Specific boxes
+//****************************************************************************************
 function numFormat(num) {
     let s = '';
 
@@ -89,7 +93,9 @@ function numFormat(num) {
 }
 
 
-
+//****************************************************************************************
+// Gets and parses data for each country by number of cases and date
+//****************************************************************************************
 function getDailyByCountry(country) {
     document.getElementById('graph').style.display = "none";
     document.getElementById('loading').style.display = "block";
@@ -111,7 +117,9 @@ function getDailyByCountry(country) {
 }
 
 
-
+//****************************************************************************************
+// Draws chart using the data in chartMap
+//****************************************************************************************
 function makeChart(map) {
     document.getElementById('graph').style.display = "block";
     document.getElementById('loading').style.display = "none";
