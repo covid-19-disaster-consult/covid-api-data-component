@@ -54,10 +54,10 @@ function getData() {
 // bottom box relevant to the country selected.
 //****************************************************************************************
 function getDataForCountry(selectedIndex) {
-    document.getElementById('currentcountry').innerText = dataArray[selectedIndex]?.country;
-    document.getElementById('currentcases').innerText = "Cases: " + numFormat(dataArray[selectedIndex]?.totalconfirmed);
-    document.getElementById('currentdeaths').innerText = "Deaths: " + numFormat(dataArray[selectedIndex]?.totaldeaths);
-    document.getElementById('currentrecovered').innerText = "Recovered: " + numFormat(dataArray[selectedIndex]?.totalrecovered);
+    document.getElementById('currentcountry').innerText = dataArray[selectedIndex].country;
+    document.getElementById('currentcases').innerText = "Cases: " + numFormat(dataArray[selectedIndex].totalconfirmed);
+    document.getElementById('currentdeaths').innerText = "Deaths: " + numFormat(dataArray[selectedIndex].totaldeaths);
+    document.getElementById('currentrecovered').innerText = "Recovered: " + numFormat(dataArray[selectedIndex].totalrecovered);
     getDailyByCountry(dataArray[selectedIndex]);
 }
 
